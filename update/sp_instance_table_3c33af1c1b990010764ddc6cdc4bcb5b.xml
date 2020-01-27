@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_table">
+    <sp_instance_table action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <display_field/>
+        <field_list/>
+        <filter/>
+        <glyph/>
+        <id/>
+        <maximum_entries>10</maximum_entries>
+        <order>1</order>
+        <order_by>number</order_by>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">26bddb181b990010764ddc6cdc4bcb24</sp_column>
+        <sp_page/>
+        <sp_widget display_value="Data Table from Instance Definition">38058ff1cb11020000f8d856634c9c8c</sp_widget>
+        <sys_class_name>sp_instance_table</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-11-20 01:28:04</sys_created_on>
+        <sys_id>3c33af1c1b990010764ddc6cdc4bcb5b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>CCPA Opt-In Records</sys_name>
+        <sys_package display_value="demoApp" source="x_414129_demoapp">b51f82441b010010764ddc6cdc4bcba1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="demoApp">b51f82441b010010764ddc6cdc4bcba1</sys_scope>
+        <sys_update_name>sp_instance_table_3c33af1c1b990010764ddc6cdc4bcb5b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-11-20 01:30:45</sys_updated_on>
+        <table>x_414129_ccpa_ui_c_ccpa_cookie_opt_in</table>
+        <title>CCPA Opt-In Records</title>
+        <url/>
+        <widget_parameters/>
+    </sp_instance_table>
+    <sys_translated_text action="delete_multiple" query="documentkey=3c33af1c1b990010764ddc6cdc4bcb5b"/>
+</record_update>

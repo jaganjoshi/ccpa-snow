@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category display_value="">Custom Applications</category>
+        <description>demoApp</description>
+        <device_type>browser</device_type>
+        <hint>demoApp</hint>
+        <name/>
+        <order/>
+        <roles>security_dashboard_user,service_model_security_admin,activity_admin,admin,app_service_admin,agent_admin,approval_admin</roles>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-11-06 14:29:32</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6bcf4e8c1b410010764ddc6cdc4bcbae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>demoApp</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="demoApp" source="x_414129_demoapp">b51f82441b010010764ddc6cdc4bcba1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="demoApp">b51f82441b010010764ddc6cdc4bcba1</sys_scope>
+        <sys_update_name>sys_app_application_6bcf4e8c1b410010764ddc6cdc4bcbae</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-11-06 14:29:32</sys_updated_on>
+        <title>demoApp</title>
+        <view_name/>
+    </sys_app_application>
+</record_update>

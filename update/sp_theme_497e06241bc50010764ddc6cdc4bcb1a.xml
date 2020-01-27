@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_theme">
+    <sp_theme action="INSERT_OR_UPDATE">
+        <css_variables/>
+        <footer display_value="demoCCPAOptIn">06d906201bc50010764ddc6cdc4bcbbe</footer>
+        <footer_fixed>true</footer_fixed>
+        <header/>
+        <name>ccpaFooter</name>
+        <navbar_fixed>true</navbar_fixed>
+        <sys_class_name>sp_theme</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-11-08 03:41:12</sys_created_on>
+        <sys_id>497e06241bc50010764ddc6cdc4bcb1a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ccpaFooter</sys_name>
+        <sys_package display_value="demoApp" source="x_414129_demoapp">b51f82441b010010764ddc6cdc4bcba1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="demoApp">b51f82441b010010764ddc6cdc4bcba1</sys_scope>
+        <sys_update_name>sp_theme_497e06241bc50010764ddc6cdc4bcb1a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-11-08 03:41:12</sys_updated_on>
+    </sp_theme>
+</record_update>

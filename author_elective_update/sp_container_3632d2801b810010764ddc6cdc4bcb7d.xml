@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>demoPage - Container 1</name>
+        <order>1</order>
+        <sp_page display_value="demopage">60329e801b810010764ddc6cdc4bcb91</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-11-06 14:40:08</sys_created_on>
+        <sys_id>3632d2801b810010764ddc6cdc4bcb7d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>demoPage - Container 1</sys_name>
+        <sys_package display_value="demoApp" source="x_414129_demoapp">b51f82441b010010764ddc6cdc4bcba1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="demoApp">b51f82441b010010764ddc6cdc4bcba1</sys_scope>
+        <sys_update_name>sp_container_3632d2801b810010764ddc6cdc4bcb7d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-11-06 14:40:08</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="demoApp">b51f82441b010010764ddc6cdc4bcba1</application>
+        <file_path/>
+        <instance_id>48dca223dbc6f3c83050ac44d4961924</instance_id>
+        <instance_name>dev88535</instance_name>
+        <name>sp_container_3632d2801b810010764ddc6cdc4bcb7d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>demoPage - Container 1</name><order>1</order><sp_page display_value="demopage">60329e801b810010764ddc6cdc4bcb91</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2019-11-06 14:40:08</sys_created_on><sys_id>3632d2801b810010764ddc6cdc4bcb7d</sys_id><sys_mod_count>0</sys_mod_count><sys_name>demoPage - Container 1</sys_name><sys_package display_value="demoApp" source="x_414129_demoapp">b51f82441b010010764ddc6cdc4bcba1</sys_package><sys_policy/><sys_scope display_value="demoApp">b51f82441b010010764ddc6cdc4bcba1</sys_scope><sys_update_name>sp_container_3632d2801b810010764ddc6cdc4bcb7d</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2019-11-06 14:40:08</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>-1242772068</payload_hash>
+        <record_name>demoPage - Container 1</record_name>
+        <reverted_from/>
+        <source>b91f82441b010010764ddc6cdc4bcba3</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-11-06 14:40:08</sys_created_on>
+        <sys_id>fe325e041b810010764ddc6cdc4bcb2d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>16e412891df0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-11-06 14:40:08</sys_updated_on>
+        <type>Container</type>
+        <update_guid>b232d280f38100104dedd2fab818b77e</update_guid>
+        <update_guid_history>b232d280f38100104dedd2fab818b77e:-1242772068</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="demoPage - Container 1">9b725e041b810010764ddc6cdc4bcbe0</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-11-06 14:41:16</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>670432ac4e5d4af08927d4b17c563a10</sys_id>
+        <sys_metadata>3632d2801b810010764ddc6cdc4bcb7d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>demoPage - Container 1</sys_name>
+        <sys_package display_value="demoApp" source="x_414129_demoapp">b51f82441b010010764ddc6cdc4bcba1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="demoApp">b51f82441b010010764ddc6cdc4bcba1</sys_scope>
+        <sys_scope_delete display_value="">672227b1fa9d441e8f892eb3644bf984</sys_scope_delete>
+        <sys_update_name>sp_container_3632d2801b810010764ddc6cdc4bcb7d</sys_update_name>
+        <sys_update_version display_value="sp_container_3632d2801b810010764ddc6cdc4bcb7d">fe325e041b810010764ddc6cdc4bcb2d</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-11-06 14:41:16</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

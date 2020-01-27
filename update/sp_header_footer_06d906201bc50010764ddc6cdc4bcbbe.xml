@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_header_footer">
+    <sp_header_footer action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($uibModal, $scope, $http, $window, spUtil){
+	var c = this;
+
+	 $http.get(c.options.queue_url).then(function (response) {		
+    if (response.data.result && response.data.result.length)
+      angular.extend(c.data, response.data.result[0]);
+    else
+      angular.extend(c.data, response.data.result);
+		
+  })
+	 
+	/* 	
+	 c.open = function () {
+		
+		console.log(spUtil.format(c.options.window.url, {sys_id: c.data.sys_id}), c.options.window.target, c.options.window.options)
+    $window.open(spUtil.format(c.options.window.url, {sys_id: c.data.sys_id}), c.options.window.target, c.options.window.options);
+		
+		};
+*/	 
+	 c.toggle = function() {
+
+
+                  alert("Im checked, thats " + c.data.myCheckBox );
+	 
+	 };
+// START: Popup/modal for selecting chat language
+  c.open = function () {
+	  
+		 
+		
+		var popup = window.open (url, "popup", "width=760, height=600");
+		c.modalInstance.close();
+		c.language='';
+		};
+
+	
+ c.openModal111 = function() {
+	 
+			c.modalInstance = $uibModal.open({
+			templateUrl: 'modalTemplate111',
+			scope: $scope,
+			windowClass: 'app-modal-window'
+		});
+	};
+ 
+	c.closeModal111 = function() {
+		c.language="";
+		c.modalInstance.close();
+	};	
+//  END: Popup/modal for selecting chat language
+	
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.btn-primary{&#13;
+     bottom: 10px;&#13;
+    right: 4px;&#13;
+    padding: 10px;&#13;
+    color: #fff;&#13;
+	background-color: #428bca;&#13;
+    display: inline-block;&#13;
+	margin-bottom: 0;&#13;
+	font-weight: normal;&#13;
+	text-align: center;&#13;
+	vertical-align: middle;&#13;
+	cursor: pointer;&#13;
+	background-image: none;&#13;
+	border: 1px solid transparent;&#13;
+	white-space: nowrap;&#13;
+	padding: 6px 12px;&#13;
+	font-size: 14px;&#13;
+	line-height: 1.42857;&#13;
+	border-radius: 4px;&#13;
+	-webkit-user-select: none;&#13;
+	-moz-user-select: none;&#13;
+	-ms-user-select: none;&#13;
+	user-select: none;&#13;
+  text-align: center;&#13;
+   &#13;
+}&#13;
+i{&#13;
+padding-right:10px;&#13;
+ padding-left:10px&#13;
+  font-family: "Arial";&#13;
+}&#13;
+&#13;
+.sticky-footer {&#13;
+&#13;
+    position: absolute;&#13;
+  bottom: 0;&#13;
+  width: 100%;&#13;
+  height: 60px; /* Set the fixed height of the footer here */&#13;
+  background-color: #333333; &#13;
+  left:0;&#13;
+  right:0;&#13;
+&#13;
+}&#13;
+&#13;
+.sticky-footer p {&#13;
+    font-size: 14px;&#13;
+    font-family: Arial, Helvetica, sans-serif;&#13;
+    color: white;&#13;
+    text-align: center;&#13;
+  margin:18px 0 0;&#13;
+}&#13;
+&#13;
+&#13;
+#mySidenav a {&#13;
+  color: white;&#13;
+  font-size: 12px;&#13;
+}&#13;
+&#13;
+#mySidenav a:hover {&#13;
+ /*  right: 15px;&#13;
+  width: 110px;&#13;
+ flex-shrink: 0;*/&#13;
+    &#13;
+  &#13;
+}&#13;
+#mySidenav a:hover i{&#13;
+/*  display:;&#13;
+display:flex;*/&#13;
+}&#13;
+&#13;
+#about10 {&#13;
+  top: 200px;&#13;
+  background-color: #8c0073;&#13;
+  flex-shrink: 0;&#13;
+}&#13;
+&#13;
+#chat {&#13;
+    top: 80px;&#13;
+    background-color: #2196F3;&#13;
+}&#13;
+&#13;
+.app-modal-window{ width:350px;}&#13;
+&#13;
+#mySidenav1 a {&#13;
+  position: fixed;&#13;
+  overflow: hidden;&#13;
+  transition: 0.3s;&#13;
+  bottom: 0;&#13;
+  right: 0;&#13;
+  width: 100%;&#13;
+&#13;
+  border: 3px solid #73AD21;&#13;
+  color: white;&#13;
+  text-decoration: none;&#13;
+  border-radius: 5px 0 0 5px;&#13;
+  font-size: 20px&#13;
+}&#13;
+&#13;
+#mySidenav1 a:hover {&#13;
+    right: 15px;&#13;
+   width: 160px;&#13;
+}&#13;
+#mySidenav1 a:hover i{&#13;
+display:;&#13;
+}&#13;
+&#13;
+#about1 {&#13;
+      &#13;
+}&#13;
+&#13;
+#chat {&#13;
+    top: 80px;&#13;
+   &#13;
+}&#13;
+#mySidenav2 a {&#13;
+   position: fixed; &#13;
+  /*position: relative;&#13;
+  position: -webkit-sticky;&#13;
+    position: sticky;&#13;
+   top: 250px;*/&#13;
+    right: 15px;&#13;
+  overflow: hidden;&#13;
+      transition: 0.3s;&#13;
+    float: right;&#13;
+    width: 40px;&#13;
+  color: white;&#13;
+    text-decoration: none;&#13;
+  border-radius: 5px 0 0 5px;&#13;
+  font-family: "arial";&#13;
+   /* font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;*/&#13;
+  font-size: 20px&#13;
+}&#13;
+&#13;
+#mySidenav2 a:hover {&#13;
+    right: 15px;&#13;
+   width: 205px;&#13;
+}&#13;
+#mySidenav2 a:hover i{&#13;
+display:;&#13;
+}&#13;
+&#13;
+#about2 {&#13;
+    top: 260px;&#13;
+    background-color: #800000;&#13;
+    &#13;
+}&#13;
+&#13;
+#chat {&#13;
+    top: 260px;&#13;
+    background-color: #800000;&#13;
+}&#13;
+#mySidenav3 a {&#13;
+ position: fixed;  &#13;
+  /*position: relative;&#13;
+  position: -webkit-sticky;&#13;
+    position: sticky;&#13;
+   top: 275px;*/&#13;
+    right: 15px;&#13;
+  overflow: hidden;&#13;
+      transition: 0.3s;&#13;
+    float: right;&#13;
+    width: 40px;&#13;
+  color: white;&#13;
+    text-decoration: none;&#13;
+  border-radius: 5px 0 0 5px;&#13;
+  &#13;
+ /*   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;*/&#13;
+  font-size: 20px&#13;
+}&#13;
+&#13;
+#mySidenav3 a:hover {&#13;
+    right: 15px;&#13;
+   width: 105px;&#13;
+}&#13;
+#mySidenav3 a:hover i{&#13;
+display:;&#13;
+}&#13;
+&#13;
+#about3 {&#13;
+    top: 290px;&#13;
+    background-color: #1900e6;&#13;
+    &#13;
+}&#13;
+&#13;
+#chat {&#13;
+    top: 260px;&#13;
+    background-color: #2196F3;&#13;
+}&#13;
+#mySidenav4 a {&#13;
+ &#13;
+position:fixed;&#13;
+  /*position: relative;&#13;
+  position: -webkit-sticky;&#13;
+    position: sticky;&#13;
+   top: 300px;*/&#13;
+  &#13;
+   right: 15px;&#13;
+  overflow: hidden;&#13;
+      transition: 0.3s;&#13;
+    float: right;&#13;
+    width: 40px;&#13;
+  color: white;&#13;
+    text-decoration: none;&#13;
+  border-radius: 5px 0 0 5px;&#13;
+  &#13;
+   /* font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;*/&#13;
+  font-size: 20px&#13;
+}&#13;
+&#13;
+#mySidenav4 a:hover {&#13;
+    right: 15px;&#13;
+   width: 150px;&#13;
+}&#13;
+#mySidenav4 a:hover i{&#13;
+display:;&#13;
+}&#13;
+&#13;
+#about4 {&#13;
+    top: 320px;&#13;
+    background-color: #800000;&#13;
+    &#13;
+}&#13;
+&#13;
+#chat {&#13;
+    top: 260px;&#13;
+    background-color: #2196F3;&#13;
+}&#13;
+.button {&#13;
+       font-family:arial;&#13;
+		font-size:15px;&#13;
+		width:290px;&#13;
+  		height:100px;&#13;
+		border:1 px solid;&#13;
+		background-color:#9aa3aa !important;&#13;
+		color:white!important;&#13;
+		margin-left:10px;&#13;
+		margin-top:10px;&#13;
+		text-align: center;&#13;
+		&#13;
+}&#13;
+.my-modal .modal-footer {&#13;
+    display: none;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>demoCCPAOptIn</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>demoCCPAOptIn</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	options.queue_url = options.queue_url || '/api/now/connect/support/queues';	
+	if (options.queue_name) 
+		options.queue_url += '?queue_name=' + options.queue_name;
+		
+	if (options.queue_id) 
+		options.queue_url += '/' + options.queue_id;
+	
+	options.title = options.title || 'Connect Settings';
+	options.title = gs.getMessage(options.title);	
+	
+	options.message = options.message || 'Start Settings';
+	options.message = gs.getMessage(options.message);
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_header_footer</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-11-08 03:20:27</sys_created_on>
+        <sys_id>06d906201bc50010764ddc6cdc4bcbbe</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>demoCCPAOptIn</sys_name>
+        <sys_package display_value="demoApp" source="x_414129_demoapp">b51f82441b010010764ddc6cdc4bcba1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="demoApp">b51f82441b010010764ddc6cdc4bcba1</sys_scope>
+        <sys_update_name>sp_header_footer_06d906201bc50010764ddc6cdc4bcbbe</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-11-11 22:37:56</sys_updated_on>
+        <template><![CDATA[<!-- START: Popup/modal -->
+<div id="mySidenav" class="sticky-footer">
+   
+   <p>This website uses cookies to remember users  and understand ways enhance their experience. &nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="btn btn-success" href="#" role="button">Accept</a>&nbsp;&nbsp;&nbsp;&nbsp; <a class="btn btn-primary" href="javascript:void(0)" id="about1" ng-click="c.openModal111()" role="button">${Privacy Policy Settings} </a>
+    
+  </p></div>
+  
+  
+  <script type="text/ng-template" id="modalTemplate111">
+  
+      <div class="panel panel-default bd-example-modal-lg">
+          <div class="panel-heading">
+              <h1 align="center">${Privacy Preferences}</h1>
+            </div>
+            
+            
+            
+                          <div class="panel-body">
+                     <div class="list-group">
+                        <div class="list-group-item list-group-item-action flex-column align-items-start">
+                          <div class="d-flex w-100 justify-content-between">
+                                <div class="form-check">
+                                        <input type="checkbox" ng-model="c.data.myCheckBox" ng-change="c.toggle()">
+                                         <label class="form-check-label" for="exampleCheck1" style="padding-left: 10px; font-weight:700;">${Performance Cookies}</label>
+                                           </div>
+                           
+                          </div>
+                          <p class="mb-1" style="padding-left: 25px;">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                      
+                        </div>
+                        
+                        
+                        <div class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                      <div class="form-check">
+                                              <input type="checkbox">
+                                              <label class="form-check-label" for="exampleCheck2" style="padding-left: 10px; font-weight:700;">${Analytics Cookies}</label>
+                                      </div>
+                                 
+                                </div>
+                                <p class="mb-1" style="padding-left: 25px;">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                            
+                        </div>
+
+
+                        <div class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                      <div class="form-check">
+                                              <input type="checkbox">
+                                              <label class="form-check-label" for="exampleCheck3" style="padding-left: 10px; font-weight:700;">${Marketing Cookies}</label>
+                                      </div>
+                                 
+                                </div>
+                                <p class="mb-1" style="padding-left: 25px;">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                            
+                        </div>
+
+
+                        <div class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                      <div class="form-check">
+                                              <input type="checkbox" >
+                                              <label class="form-check-label" for="exampleCheck4" style="padding-left: 10px; font-weight:700;">${Essential Cookies}</label>
+                                      </div>
+                                 
+                                </div>
+                                <p class="mb-1" style="padding-left: 25px;">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                            
+                        </div>
+                      </div>
+    
+    </div>
+   <div class="panel-footer">
+              <button class="btn btn-primary" ng-click="c.closeModal111()">${Save}</button>
+              
+          </div>
+         
+  
+  </script>
+  
+ 
+  <!-- END: Popup/modal -->
+  
+  ]]></template>
+    </sp_header_footer>
+</record_update>

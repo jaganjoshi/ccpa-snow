@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_view">
+    <sys_ui_view action="INSERT_OR_UPDATE">
+        <group/>
+        <hidden>false</hidden>
+        <name>catalog_Admin_Home</name>
+        <roles/>
+        <sys_class_name>sys_ui_view</sys_class_name>
+        <sys_created_by>subhan123</sys_created_by>
+        <sys_created_on>2019-12-02 13:30:37</sys_created_on>
+        <sys_id>3dab37101b610010764ddc6cdc4bcbeb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Catalog_admin_home</sys_name>
+        <sys_package display_value="demoApp" source="x_414129_demoapp">b51f82441b010010764ddc6cdc4bcba1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="demoApp">b51f82441b010010764ddc6cdc4bcba1</sys_scope>
+        <sys_update_name>sys_ui_view_3dab37101b610010764ddc6cdc4bcbeb</sys_update_name>
+        <sys_updated_by>subhan123</sys_updated_by>
+        <sys_updated_on>2019-12-02 13:30:37</sys_updated_on>
+        <title>Catalog_admin_home</title>
+        <user/>
+    </sys_ui_view>
+</record_update>

@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_header_footer">
+    <sp_header_footer action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[function($uibModal, $scope, $http, $window, spUtil){
+	var c = this;
+
+	 $http.get(c.options.queue_url).then(function (response) {		
+    if (response.data.result && response.data.result.length)
+      angular.extend(c.data, response.data.result[0]);
+    else
+      angular.extend(c.data, response.data.result);
+		
+  })
+	 
+	/* 	
+	 c.open = function () {
+		
+		console.log(spUtil.format(c.options.window.url, {sys_id: c.data.sys_id}), c.options.window.target, c.options.window.options)
+    $window.open(spUtil.format(c.options.window.url, {sys_id: c.data.sys_id}), c.options.window.target, c.options.window.options);
+		
+		};
+*/	 
+	 c.toggle = function() {
+
+
+                  alert("Im checked, thats " + c.data.myCheckBox );
+	 
+	 };
+// START: Popup/modal for selecting chat language
+  c.open = function () {
+	  
+		 
+		
+		var popup = window.open (url, "popup", "width=760, height=600");
+		c.modalInstance.close();
+		c.language='';
+		};
+
+	
+ c.openModal111 = function() {
+	 
+			c.modalInstance = $uibModal.open({
+			templateUrl: 'modalTemplate111',
+			scope: $scope,
+			windowClass: 'app-modal-window'
+		});
+	};
+ 
+	c.closeModal111 = function() {
+		c.language="";
+		c.modalInstance.close();
+	};	
+//  END: Popup/modal for selecting chat language
+	
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.btn-primary{&#13;
+     bottom: 10px;&#13;
+    right: 4px;&#13;
+    padding: 10px;&#13;
+    color: #fff;&#13;
+	background-color: #428bca;&#13;
+    display: inline-block;&#13;
+	margin-bottom: 0;&#13;
+	font-weight: normal;&#13;
+	text-align: center;&#13;
+	vertical-align: middle;&#13;
+	cursor: pointer;&#13;
+	background-image: none;&#13;
+	border: 1px solid transparent;&#13;
+	white-space: nowrap;&#13;
+	padding: 6px 12px;&#13;
+	font-size: 14px;&#13;
+	line-height: 1.42857;&#13;
+	border-radius: 4px;&#13;
+	-webkit-user-select: none;&#13;
+	-moz-user-select: none;&#13;
+	-ms-user-select: none;&#13;
+	user-select: none;&#13;
+  text-align: center;&#13;
+   &#13;
+}&#13;
+i{&#13;
+padding-right:10px;&#13;
+ padding-left:10px&#13;
+  font-family: "Arial";&#13;
+}&#13;
+&#13;
+.sticky-footer {&#13;
+&#13;
+    position: absolute;&#13;
+  bottom: 0;&#13;
+  width: 100%;&#13;
+  height: 60px; /* Set the fixed height of the footer here */&#13;
+  background-color: #333333; &#13;
+  left:0;&#13;
+  right:0;&#13;
+&#13;
+}&#13;
+&#13;
+.sticky-footer p {&#13;
+    font-size: 14px;&#13;
+    font-family: Arial, Helvetica, sans-serif;&#13;
+    color: white;&#13;
+    text-align: center;&#13;
+  margin:18px 0 0;&#13;
+}&#13;
+&#13;
+&#13;
+#mySidenav a {&#13;
+  color: white;&#13;
+  font-size: 12px;&#13;
+}&#13;
+&#13;
+#mySidenav a:hover {&#13;
+ /*  right: 15px;&#13;
+  width: 110px;&#13;
+ flex-shrink: 0;*/&#13;
+    &#13;
+  &#13;
+}&#13;
+#mySidenav a:hover i{&#13;
+/*  display:;&#13;
+display:flex;*/&#13;
+}&#13;
+&#13;
+#about10 {&#13;
+  top: 200px;&#13;
+  background-color: #8c0073;&#13;
+  flex-shrink: 0;&#13;
+}&#13;
+&#13;
+#chat {&#13;
+    top: 80px;&#13;
+    background-color: #2196F3;&#13;
+}&#13;
+&#13;
+.app-modal-window{ width:350px;}&#13;
+&#13;
+#mySidenav1 a {&#13;
+  position: fixed;&#13;
+  overflow: hidden;&#13;
+  transition: 0.3s;&#13;
+  bottom: 0;&#13;
+  right: 0;&#13;
+  width: 100%;&#13;
+&#13;
+  border: 3px solid #73AD21;&#13;
+  color: white;&#13;
+  text-decoration: none;&#13;
+  border-radius: 5px 0 0 5px;&#13;
+  font-size: 20px&#13;
+}&#13;
+&#13;
+#mySidenav1 a:hover {&#13;
+    right: 15px;&#13;
+   width: 160px;&#13;
+}&#13;
+#mySidenav1 a:hover i{&#13;
+display:;&#13;
+}&#13;
+&#13;
+#about1 {&#13;
+      &#13;
+}&#13;
+&#13;
+#chat {&#13;
+    top: 80px;&#13;
+   &#13;
+}&#13;
+#mySidenav2 a {&#13;
+   position: fixed; &#13;
+  /*position: relative;&#13;
+  position: -webkit-sticky;&#13;
+    position: sticky;&#13;
+   top: 250px;*/&#13;
+    right: 15px;&#13;
+  overflow: hidden;&#13;
+      transition: 0.3s;&#13;
+    float: right;&#13;
+    width: 40px;&#13;
+  color: white;&#13;
+    text-decoration: none;&#13;
+  border-radius: 5px 0 0 5px;&#13;
+  font-family: "arial";&#13;
+   /* font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;*/&#13;
+  font-size: 20px&#13;
+}&#13;
+&#13;
+#mySidenav2 a:hover {&#13;
+    right: 15px;&#13;
+   width: 205px;&#13;
+}&#13;
+#mySidenav2 a:hover i{&#13;
+display:;&#13;
+}&#13;
+&#13;
+#about2 {&#13;
+    top: 260px;&#13;
+    background-color: #800000;&#13;
+    &#13;
+}&#13;
+&#13;
+#chat {&#13;
+    top: 260px;&#13;
+    background-color: #800000;&#13;
+}&#13;
+#mySidenav3 a {&#13;
+ position: fixed;  &#13;
+  /*position: relative;&#13;
+  position: -webkit-sticky;&#13;
+    position: sticky;&#13;
+   top: 275px;*/&#13;
+    right: 15px;&#13;
+  overflow: hidden;&#13;
+      transition: 0.3s;&#13;
+    float: right;&#13;
+    width: 40px;&#13;
+  color: white;&#13;
+    text-decoration: none;&#13;
+  border-radius: 5px 0 0 5px;&#13;
+  &#13;
+ /*   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;*/&#13;
+  font-size: 20px&#13;
+}&#13;
+&#13;
+#mySidenav3 a:hover {&#13;
+    right: 15px;&#13;
+   width: 105px;&#13;
+}&#13;
+#mySidenav3 a:hover i{&#13;
+display:;&#13;
+}&#13;
+&#13;
+#about3 {&#13;
+    top: 290px;&#13;
+    background-color: #1900e6;&#13;
+    &#13;
+}&#13;
+&#13;
+#chat {&#13;
+    top: 260px;&#13;
+    background-color: #2196F3;&#13;
+}&#13;
+#mySidenav4 a {&#13;
+ &#13;
+position:fixed;&#13;
+  /*position: relative;&#13;
+  position: -webkit-sticky;&#13;
+    position: sticky;&#13;
+   top: 300px;*/&#13;
+  &#13;
+   right: 15px;&#13;
+  overflow: hidden;&#13;
+      transition: 0.3s;&#13;
+    float: right;&#13;
+    width: 40px;&#13;
+  color: white;&#13;
+    text-decoration: none;&#13;
+  border-radius: 5px 0 0 5px;&#13;
+  &#13;
+   /* font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;*/&#13;
+  font-size: 20px&#13;
+}&#13;
+&#13;
+#mySidenav4 a:hover {&#13;
+    right: 15px;&#13;
+   width: 150px;&#13;
+}&#13;
+#mySidenav4 a:hover i{&#13;
+display:;&#13;
+}&#13;
+&#13;
+#about4 {&#13;
+    top: 320px;&#13;
+    background-color: #800000;&#13;
+    &#13;
+}&#13;
+&#13;
+#chat {&#13;
+    top: 260px;&#13;
+    background-color: #2196F3;&#13;
+}&#13;
+.button {&#13;
+       font-family:arial;&#13;
+		font-size:15px;&#13;
+		width:290px;&#13;
+  		height:100px;&#13;
+		border:1 px solid;&#13;
+		background-color:#9aa3aa !important;&#13;
+		color:white!important;&#13;
+		margin-left:10px;&#13;
+		margin-top:10px;&#13;
+		text-align: center;&#13;
+		&#13;
+}&#13;
+.my-modal .modal-footer {&#13;
+    display: none;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link/>
+        <name>ccpaDEMO</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	options.queue_url = options.queue_url || '/api/now/connect/support/queues';	
+	if (options.queue_name) 
+		options.queue_url += '?queue_name=' + options.queue_name;
+		
+	if (options.queue_id) 
+		options.queue_url += '/' + options.queue_id;
+	
+	options.title = options.title || 'Connect Settings';
+	options.title = gs.getMessage(options.title);	
+	
+	options.message = options.message || 'Start Settings';
+	options.message = gs.getMessage(options.message);
+		 
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_header_footer</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-11-07 20:50:45</sys_created_on>
+        <sys_id>91a0f0e81b410010764ddc6cdc4bcbd1</sys_id>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_name>ccpaDEMO</sys_name>
+        <sys_package display_value="demoApp" source="x_414129_demoapp">b51f82441b010010764ddc6cdc4bcba1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="demoApp">b51f82441b010010764ddc6cdc4bcba1</sys_scope>
+        <sys_update_name>sp_header_footer_91a0f0e81b410010764ddc6cdc4bcbd1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-11-08 03:14:38</sys_updated_on>
+        <template><![CDATA[<!-- START: Popup/modal -->
+<div id="mySidenav" class="sticky-footer">
+   
+   <p>This website uses cookies to remember users  and understand ways enhance their experience. &nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="btn btn-success" href="#" role="button">Accept4444</a>&nbsp;&nbsp;&nbsp;&nbsp; <a class="btn btn-primary" href="javascript:void(0)" id="about1" ng-click="c.openModal111()" role="button">${Privacy Policy Settings} </a>
+    
+  </p></div>
+  
+  
+  <script type="text/ng-template" id="modalTemplate111">
+  
+      <div class="panel panel-default bd-example-modal-lg">
+          <div class="panel-heading">
+              <h1 align="center">${Privacy Preferences}</h1>
+            </div>
+            
+            
+            
+                          <div class="panel-body">
+                     <div class="list-group">
+                        <div class="list-group-item list-group-item-action flex-column align-items-start">
+                          <div class="d-flex w-100 justify-content-between">
+                                <div class="form-check">
+                                        <input type="checkbox" ng-model="c.data.myCheckBox" ng-change="c.toggle()">
+                                         <label class="form-check-label" for="exampleCheck1" style="padding-left: 10px; font-weight:700;">${Performance Cookies}</label>
+                                           </div>
+                           
+                          </div>
+                          <p class="mb-1" style="padding-left: 25px;">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                      
+                        </div>
+                        
+                        
+                        <div class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                      <div class="form-check">
+                                              <input type="checkbox">
+                                              <label class="form-check-label" for="exampleCheck2" style="padding-left: 10px; font-weight:700;">${Analytics Cookies}</label>
+                                      </div>
+                                 
+                                </div>
+                                <p class="mb-1" style="padding-left: 25px;">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                            
+                        </div>
+
+
+                        <div class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                      <div class="form-check">
+                                              <input type="checkbox">
+                                              <label class="form-check-label" for="exampleCheck3" style="padding-left: 10px; font-weight:700;">${Marketing Cookies}</label>
+                                      </div>
+                                 
+                                </div>
+                                <p class="mb-1" style="padding-left: 25px;">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                            
+                        </div>
+
+
+                        <div class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                      <div class="form-check">
+                                              <input type="checkbox" >
+                                              <label class="form-check-label" for="exampleCheck4" style="padding-left: 10px; font-weight:700;">${Essential Cookies}</label>
+                                      </div>
+                                 
+                                </div>
+                                <p class="mb-1" style="padding-left: 25px;">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                            
+                        </div>
+                      </div>
+    
+    </div>
+   <div class="panel-footer">
+              <button class="btn btn-primary" ng-click="c.closeModal111()">${Save}</button>
+              
+          </div>
+         
+  
+  </script>
+  
+ 
+  <!-- END: Popup/modal -->
+  
+  ]]></template>
+    </sp_header_footer>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="demoApp">b51f82441b010010764ddc6cdc4bcba1</application>
+        <file_path/>
+        <instance_id>48dca223dbc6f3c83050ac44d4961924</instance_id>
+        <instance_name>dev88535</instance_name>
+        <name>sp_header_footer_91a0f0e81b410010764ddc6cdc4bcbd1</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_header_footer"&gt;&lt;sp_header_footer action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[function($uibModal, $scope, $http, $window, spUtil){
+	var c = this;
+
+	 $http.get(c.options.queue_url).then(function (response) {		
+    if (response.data.result &amp;&amp; response.data.result.length)
+      angular.extend(c.data, response.data.result[0]);
+    else
+      angular.extend(c.data, response.data.result);
+		
+  })
+	 
+	/* 	
+	 c.open = function () {
+		
+		console.log(spUtil.format(c.options.window.url, {sys_id: c.data.sys_id}), c.options.window.target, c.options.window.options)
+    $window.open(spUtil.format(c.options.window.url, {sys_id: c.data.sys_id}), c.options.window.target, c.options.window.options);
+		
+		};
+*/	 
+	 c.toggle = function() {
+
+
+                  alert("Im checked, thats " + c.data.myCheckBox );
+	 
+	 };
+// START: Popup/modal for selecting chat language
+  c.open = function () {
+	  
+		 
+		
+		var popup = window.open (url, "popup", "width=760, height=600");
+		c.modalInstance.close();
+		c.language='';
+		};
+
+	
+ c.openModal111 = function() {
+	 
+			c.modalInstance = $uibModal.open({
+			templateUrl: 'modalTemplate111',
+			scope: $scope,
+			windowClass: 'app-modal-window'
+		});
+	};
+ 
+	c.closeModal111 = function() {
+		c.language="";
+		c.modalInstance.close();
+	};	
+//  END: Popup/modal for selecting chat language
+	
+	
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.btn-primary{&amp;#13;
+     bottom: 10px;&amp;#13;
+    right: 4px;&amp;#13;
+    padding: 10px;&amp;#13;
+    color: #fff;&amp;#13;
+	background-color: #428bca;&amp;#13;
+    display: inline-block;&amp;#13;
+	margin-bottom: 0;&amp;#13;
+	font-weight: normal;&amp;#13;
+	text-align: center;&amp;#13;
+	vertical-align: middle;&amp;#13;
+	cursor: pointer;&amp;#13;
+	background-image: none;&amp;#13;
+	border: 1px solid transparent;&amp;#13;
+	white-space: nowrap;&amp;#13;
+	padding: 6px 12px;&amp;#13;
+	font-size: 14px;&amp;#13;
+	line-height: 1.42857;&amp;#13;
+	border-radius: 4px;&amp;#13;
+	-webkit-user-select: none;&amp;#13;
+	-moz-user-select: none;&amp;#13;
+	-ms-user-select: none;&amp;#13;
+	user-select: none;&amp;#13;
+  text-align: center;&amp;#13;
+   &amp;#13;
+}&amp;#13;
+i{&amp;#13;
+padding-right:10px;&amp;#13;
+ padding-left:10px&amp;#13;
+  font-family: "Arial";&amp;#13;
+}&amp;#13;
+&amp;#13;
+.sticky-footer {&amp;#13;
+&amp;#13;
+    position: absolute;&amp;#13;
+  bottom: 0;&amp;#13;
+  width: 100%;&amp;#13;
+  height: 60px; /* Set the fixed height of the footer here */&amp;#13;
+  background-color: #333333; &amp;#13;
+  left:0;&amp;#13;
+  right:0;&amp;#13;
+&amp;#13;
+}&amp;#13;
+&amp;#13;
+.sticky-footer p {&amp;#13;
+    font-size: 14px;&amp;#13;
+    font-family: Arial, Helvetica, sans-serif;&amp;#13;
+    color: white;&amp;#13;
+    text-align: center;&amp;#13;
+  margin:18px 0 0;&amp;#13;
+}&amp;#13;
+&amp;#13;
+&amp;#13;
+#mySidenav a {&amp;#13;
+  color: white;&amp;#13;
+  font-size: 12px;&amp;#13;
+}&amp;#13;
+&amp;#13;
+#mySidenav a:hover {&amp;#13;
+ /*  right: 15px;&amp;#13;
+  width: 110px;&amp;#13;
+ flex-shrink: 0;*/&amp;#13;
+    &amp;#13;
+  &amp;#13;
+}&amp;#13;
+#mySidenav a:hover i{&amp;#13;
+/*  display:;&amp;#13;
+display:flex;*/&amp;#13;
+}&amp;#13;
+&amp;#13;
+#about10 {&amp;#13;
+  top: 200px;&amp;#13;
+  background-color: #8c0073;&amp;#13;
+  flex-shrink: 0;&amp;#13;
+}&amp;#13;
+&amp;#13;
+#chat {&amp;#13;
+    top: 80px;&amp;#13;
+    background-color: #2196F3;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.app-modal-window{ width:350px;}&amp;#13;
+&amp;#13;
+#mySidenav1 a {&amp;#13;
+  position: fixed;&amp;#13;
+  overflow: hidden;&amp;#13;
+  transition: 0.3s;&amp;#13;
+  bottom: 0;&amp;#13;
+  right: 0;&amp;#13;
+  width: 100%;&amp;#13;
+&amp;#13;
+  border: 3px solid #73AD21;&amp;#13;
+  color: white;&amp;#13;
+  text-decoration: none;&amp;#13;
+  border-radius: 5px 0 0 5px;&amp;#13;
+  font-size: 20px&amp;#13;
+}&amp;#13;
+&amp;#13;
+#mySidenav1 a:hover {&amp;#13;
+    right: 15px;&amp;#13;
+   width: 160px;&amp;#13;
+}&amp;#13;
+#mySidenav1 a:hover i{&amp;#13;
+display:;&amp;#13;
+}&amp;#13;
+&amp;#13;
+#about1 {&amp;#13;
+      &amp;#13;
+}&amp;#13;
+&amp;#13;
+#chat {&amp;#13;
+    top: 80px;&amp;#13;
+   &amp;#13;
+}&amp;#13;
+#mySidenav2 a {&amp;#13;
+   position: fixed; &amp;#13;
+  /*position: relative;&amp;#13;
+  position: -webkit-sticky;&amp;#13;
+    position: sticky;&amp;#13;
+   top: 250px;*/&amp;#13;
+    right: 15px;&amp;#13;
+  overflow: hidden;&amp;#13;
+      transition: 0.3s;&amp;#13;
+    float: right;&amp;#13;
+    width: 40px;&amp;#13;
+  color: white;&amp;#13;
+    text-decoration: none;&amp;#13;
+  border-radius: 5px 0 0 5px;&amp;#13;
+  font-family: "arial";&amp;#13;
+   /* font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;*/&amp;#13;
+  font-size: 20px&amp;#13;
+}&amp;#13;
+&amp;#13;
+#mySidenav2 a:hover {&amp;#13;
+    right: 15px;&amp;#13;
+   width: 205px;&amp;#13;
+}&amp;#13;
+#mySidenav2 a:hover i{&amp;#13;
+display:;&amp;#13;
+}&amp;#13;
+&amp;#13;
+#about2 {&amp;#13;
+    top: 260px;&amp;#13;
+    background-color: #800000;&amp;#13;
+    &amp;#13;
+}&amp;#13;
+&amp;#13;
+#chat {&amp;#13;
+    top: 260px;&amp;#13;
+    background-color: #800000;&amp;#13;
+}&amp;#13;
+#mySidenav3 a {&amp;#13;
+ position: fixed;  &amp;#13;
+  /*position: relative;&amp;#13;
+  position: -webkit-sticky;&amp;#13;
+    position: sticky;&amp;#13;
+   top: 275px;*/&amp;#13;
+    right: 15px;&amp;#13;
+  overflow: hidden;&amp;#13;
+      transition: 0.3s;&amp;#13;
+    float: right;&amp;#13;
+    width: 40px;&amp;#13;
+  color: white;&amp;#13;
+    text-decoration: none;&amp;#13;
+  border-radius: 5px 0 0 5px;&amp;#13;
+  &amp;#13;
+ /*   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;*/&amp;#13;
+  font-size: 20px&amp;#13;
+}&amp;#13;
+&amp;#13;
+#mySidenav3 a:hover {&amp;#13;
+    right: 15px;&amp;#13;
+   width: 105px;&amp;#13;
+}&amp;#13;
+#mySidenav3 a:hover i{&amp;#13;
+display:;&amp;#13;
+}&amp;#13;
+&amp;#13;
+#about3 {&amp;#13;
+    top: 290px;&amp;#13;
+    background-color: #1900e6;&amp;#13;
+    &amp;#13;
+}&amp;#13;
+&amp;#13;
+#chat {&amp;#13;
+    top: 260px;&amp;#13;
+    background-color: #2196F3;&amp;#13;
+}&amp;#13;
+#mySidenav4 a {&amp;#13;
+ &amp;#13;
+position:fixed;&amp;#13;
+  /*position: relative;&amp;#13;
+  position: -webkit-sticky;&amp;#13;
+    position: sticky;&amp;#13;
+   top: 300px;*/&amp;#13;
+  &amp;#13;
+   right: 15px;&amp;#13;
+  overflow: hidden;&amp;#13;
+      transition: 0.3s;&amp;#13;
+    float: right;&amp;#13;
+    width: 40px;&amp;#13;
+  color: white;&amp;#13;
+    text-decoration: none;&amp;#13;
+  border-radius: 5px 0 0 5px;&amp;#13;
+  &amp;#13;
+   /* font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;*/&amp;#13;
+  font-size: 20px&amp;#13;
+}&amp;#13;
+&amp;#13;
+#mySidenav4 a:hover {&amp;#13;
+    right: 15px;&amp;#13;
+   width: 150px;&amp;#13;
+}&amp;#13;
+#mySidenav4 a:hover i{&amp;#13;
+display:;&amp;#13;
+}&amp;#13;
+&amp;#13;
+#about4 {&amp;#13;
+    top: 320px;&amp;#13;
+    background-color: #800000;&amp;#13;
+    &amp;#13;
+}&amp;#13;
+&amp;#13;
+#chat {&amp;#13;
+    top: 260px;&amp;#13;
+    background-color: #2196F3;&amp;#13;
+}&amp;#13;
+.button {&amp;#13;
+       font-family:arial;&amp;#13;
+		font-size:15px;&amp;#13;
+		width:290px;&amp;#13;
+  		height:100px;&amp;#13;
+		border:1 px solid;&amp;#13;
+		background-color:#9aa3aa !important;&amp;#13;
+		color:white!important;&amp;#13;
+		margin-left:10px;&amp;#13;
+		margin-top:10px;&amp;#13;
+		text-align: center;&amp;#13;
+		&amp;#13;
+}&amp;#13;
+.my-modal .modal-footer {&amp;#13;
+    display: none;&amp;#13;
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id/&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link/&gt;&lt;name&gt;ccpaDEMO&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+	options.queue_url = options.queue_url || '/api/now/connect/support/queues';	
+	if (options.queue_name) 
+		options.queue_url += '?queue_name=' + options.queue_name;
+		
+	if (options.queue_id) 
+		options.queue_url += '/' + options.queue_id;
+	
+	options.title = options.title || 'Connect Settings';
+	options.title = gs.getMessage(options.title);	
+	
+	options.message = options.message || 'Start Settings';
+	options.message = gs.getMessage(options.message);
+		 
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_header_footer&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2019-11-07 20:50:45&lt;/sys_created_on&gt;&lt;sys_id&gt;91a0f0e81b410010764ddc6cdc4bcbd1&lt;/sys_id&gt;&lt;sys_mod_count&gt;18&lt;/sys_mod_count&gt;&lt;sys_name&gt;ccpaDEMO&lt;/sys_name&gt;&lt;sys_package display_value="demoApp" source="x_414129_demoapp"&gt;b51f82441b010010764ddc6cdc4bcba1&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="demoApp"&gt;b51f82441b010010764ddc6cdc4bcba1&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_header_footer_91a0f0e81b410010764ddc6cdc4bcbd1&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2019-11-08 03:14:38&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;!-- START: Popup/modal --&gt;
+&lt;div id="mySidenav" class="sticky-footer"&gt;
+   
+   &lt;p&gt;This website uses cookies to remember users  and understand ways enhance their experience. &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+    &lt;a class="btn btn-success" href="#" role="button"&gt;Accept4444&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;a class="btn btn-primary" href="javascript:void(0)" id="about1" ng-click="c.openModal111()" role="button"&gt;${Privacy Policy Settings} &lt;/a&gt;
+    
+  &lt;/p&gt;&lt;/div&gt;
+  
+  
+  &lt;script type="text/ng-template" id="modalTemplate111"&gt;
+  
+      &lt;div class="panel panel-default bd-example-modal-lg"&gt;
+          &lt;div class="panel-heading"&gt;
+              &lt;h1 align="center"&gt;${Privacy Preferences}&lt;/h1&gt;
+            &lt;/div&gt;
+            
+            
+            
+                          &lt;div class="panel-body"&gt;
+                     &lt;div class="list-group"&gt;
+                        &lt;div class="list-group-item list-group-item-action flex-column align-items-start"&gt;
+                          &lt;div class="d-flex w-100 justify-content-between"&gt;
+                                &lt;div class="form-check"&gt;
+                                        &lt;input type="checkbox" ng-model="c.data.myCheckBox" ng-change="c.toggle()"&gt;
+                                         &lt;label class="form-check-label" for="exampleCheck1" style="padding-left: 10px; font-weight:700;"&gt;${Performance Cookies}&lt;/label&gt;
+                                           &lt;/div&gt;
+                           
+                          &lt;/div&gt;
+                          &lt;p class="mb-1" style="padding-left: 25px;"&gt;Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.&lt;/p&gt;
+                      
+                        &lt;/div&gt;
+                        
+                        
+                        &lt;div class="list-group-item list-group-item-action flex-column align-items-start"&gt;
+                                &lt;div class="d-flex w-100 justify-content-between"&gt;
+                                      &lt;div class="form-check"&gt;
+                                              &lt;input type="checkbox"&gt;
+                                              &lt;label class="form-check-label" for="exampleCheck2" style="padding-left: 10px; font-weight:700;"&gt;${Analytics Cookies}&lt;/label&gt;
+                                      &lt;/div&gt;
+                                 
+                                &lt;/div&gt;
+                                &lt;p class="mb-1" style="padding-left: 25px;"&gt;Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.&lt;/p&gt;
+                            
+                        &lt;/div&gt;
+
+
+                        &lt;div class="list-group-item list-group-item-action flex-column align-items-start"&gt;
+                                &lt;div class="d-flex w-100 justify-content-between"&gt;
+                                      &lt;div class="form-check"&gt;
+                                              &lt;input type="checkbox"&gt;
+                                              &lt;label class="form-check-label" for="exampleCheck3" style="padding-left: 10px; font-weight:700;"&gt;${Marketing Cookies}&lt;/label&gt;
+                                      &lt;/div&gt;
+                                 
+                                &lt;/div&gt;
+                                &lt;p class="mb-1" style="padding-left: 25px;"&gt;Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.&lt;/p&gt;
+                            
+                        &lt;/div&gt;
+
+
+                        &lt;div class="list-group-item list-group-item-action flex-column align-items-start"&gt;
+                                &lt;div class="d-flex w-100 justify-content-between"&gt;
+                                      &lt;div class="form-check"&gt;
+                                              &lt;input type="checkbox" &gt;
+                                              &lt;label class="form-check-label" for="exampleCheck4" style="padding-left: 10px; font-weight:700;"&gt;${Essential Cookies}&lt;/label&gt;
+                                      &lt;/div&gt;
+                                 
+                                &lt;/div&gt;
+                                &lt;p class="mb-1" style="padding-left: 25px;"&gt;Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.&lt;/p&gt;
+                            
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+    
+    &lt;/div&gt;
+   &lt;div class="panel-footer"&gt;
+              &lt;button class="btn btn-primary" ng-click="c.closeModal111()"&gt;${Save}&lt;/button&gt;
+              
+          &lt;/div&gt;
+         
+  
+  &lt;/script&gt;
+  
+ 
+  &lt;!-- END: Popup/modal --&gt;
+  
+  ]]&gt;&lt;/template&gt;&lt;/sp_header_footer&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>669563136</payload_hash>
+        <record_name>ccpaDEMO</record_name>
+        <reverted_from/>
+        <source>b91f82441b010010764ddc6cdc4bcba3</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-11-08 03:14:38</sys_created_on>
+        <sys_id>7888866c1b850010764ddc6cdc4bcb46</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>16e4901b3b50000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-11-08 03:14:38</sys_updated_on>
+        <type>Header | Footer</type>
+        <update_guid>f088866c57850010d2eb22bd9d2a9446</update_guid>
+        <update_guid_history>f088866c57850010d2eb22bd9d2a9446:669563136,df64cee8e685001087a776e58317691e:1268096363,c8728a683c850010615ae168856af3cb:-1405343872,60d186680585001021836d5d67b4fc04:-259252517,75a14a28b8850010322f1052038f25ed:-1184048726,86f8fd20a88500106ce7241ef0192e0c:-637843575,6e7839e8a4450010b5bb0443a9977c80:1866485288,afc73dec7b450010d44dfd4721d0f9ae:1992105155,d7a731a8ee450010b00215b1e509564d:1747535068,809779ac48450010a717ae90a144bb8d:-442141024,8e8631a8134500102962ccdf0d702240:-946405929,ec4379a8b7450010960d271cb3658f26:1271335575,ffb231a8d7450010ddc13e0e5cb35a0b:549853088,fda1fd68564500106389f808b479928b:280191798,37e0316869450010c764f140747fc972:-1365251124,5380fd243a450010d84299bae9664642:-1444416346,e1ba21e0b2450010a6087ba1cbd87ad7:-1272492072,cac0346cbf410010f94ed86d9480a886:-1994411871,1da0f0e88f410010f82bb34454fbc2d3:677515821</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="ccpaDEMO">f92a4a601bc50010764ddc6cdc4bcb69</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-11-08 03:21:48</sys_created_on>
+        <sys_db_object display_value="" name="sp_header_footer">sp_header_footer</sys_db_object>
+        <sys_id>48379b1cb8aa46e8a36e96b424507d44</sys_id>
+        <sys_metadata>91a0f0e81b410010764ddc6cdc4bcbd1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ccpaDEMO</sys_name>
+        <sys_package display_value="demoApp" source="x_414129_demoapp">b51f82441b010010764ddc6cdc4bcba1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="demoApp">b51f82441b010010764ddc6cdc4bcba1</sys_scope>
+        <sys_scope_delete display_value="">672227b1fa9d441e8f892eb3644bf984</sys_scope_delete>
+        <sys_update_name>sp_header_footer_91a0f0e81b410010764ddc6cdc4bcbd1</sys_update_name>
+        <sys_update_version display_value="sp_header_footer_91a0f0e81b410010764ddc6cdc4bcbd1">7888866c1b850010764ddc6cdc4bcb46</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-11-08 03:21:48</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

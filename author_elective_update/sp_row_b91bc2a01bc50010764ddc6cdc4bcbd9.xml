@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_row">
+    <sp_row action="DELETE">
+        <class_name/>
+        <order>1</order>
+        <sp_column/>
+        <sp_container display_value="ccpaDemo - Container 1">360b06601bc50010764ddc6cdc4bcba1</sp_container>
+        <sys_class_name>sp_row</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-11-08 03:25:55</sys_created_on>
+        <sys_id>b91bc2a01bc50010764ddc6cdc4bcbd9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="demoApp" source="x_414129_demoapp">b51f82441b010010764ddc6cdc4bcba1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="demoApp">b51f82441b010010764ddc6cdc4bcba1</sys_scope>
+        <sys_update_name>sp_row_b91bc2a01bc50010764ddc6cdc4bcbd9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-11-08 03:25:55</sys_updated_on>
+    </sp_row>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="demoApp">b51f82441b010010764ddc6cdc4bcba1</application>
+        <file_path/>
+        <instance_id>48dca223dbc6f3c83050ac44d4961924</instance_id>
+        <instance_name>dev88535</instance_name>
+        <name>sp_row_b91bc2a01bc50010764ddc6cdc4bcbd9</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_row"><sp_row action="INSERT_OR_UPDATE"><class_name/><order>1</order><sp_column/><sp_container display_value="ccpaDemo - Container 1">360b06601bc50010764ddc6cdc4bcba1</sp_container><sys_class_name>sp_row</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2019-11-08 03:25:55</sys_created_on><sys_id>b91bc2a01bc50010764ddc6cdc4bcbd9</sys_id><sys_mod_count>0</sys_mod_count><sys_name>1</sys_name><sys_package display_value="demoApp" source="x_414129_demoapp">b51f82441b010010764ddc6cdc4bcba1</sys_package><sys_policy/><sys_scope display_value="demoApp">b51f82441b010010764ddc6cdc4bcba1</sys_scope><sys_update_name>sp_row_b91bc2a01bc50010764ddc6cdc4bcbd9</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2019-11-08 03:25:55</sys_updated_on></sp_row></record_update>]]></payload>
+        <payload_hash>-1608374187</payload_hash>
+        <record_name>1</record_name>
+        <reverted_from/>
+        <source>b91f82441b010010764ddc6cdc4bcba3</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-11-08 03:25:55</sys_created_on>
+        <sys_id>bd1bc2a01bc50010764ddc6cdc4bcbda</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>16e490c05dd0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-11-08 03:25:55</sys_updated_on>
+        <type>Row</type>
+        <update_guid>f51bc2a0d5c5001048287927b03f6eda</update_guid>
+        <update_guid_history>f51bc2a0d5c5001048287927b03f6eda:-1608374187</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="1">b35b0ea01bc50010764ddc6cdc4bcb0d</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-11-08 03:27:08</sys_created_on>
+        <sys_db_object display_value="" name="sp_row">sp_row</sys_db_object>
+        <sys_id>3987586bc19f488483a6038dc4125d84</sys_id>
+        <sys_metadata>b91bc2a01bc50010764ddc6cdc4bcbd9</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="demoApp" source="x_414129_demoapp">b51f82441b010010764ddc6cdc4bcba1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="demoApp">b51f82441b010010764ddc6cdc4bcba1</sys_scope>
+        <sys_scope_delete display_value="">672227b1fa9d441e8f892eb3644bf984</sys_scope_delete>
+        <sys_update_name>sp_row_b91bc2a01bc50010764ddc6cdc4bcbd9</sys_update_name>
+        <sys_update_version display_value="sp_row_b91bc2a01bc50010764ddc6cdc4bcbd9">bd1bc2a01bc50010764ddc6cdc4bcbda</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-11-08 03:27:08</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

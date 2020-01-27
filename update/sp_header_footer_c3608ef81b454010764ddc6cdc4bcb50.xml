@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_header_footer">
+    <sp_header_footer action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function a() {
+  /* widget controller */
+  var c = this;
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.isc-footer{&#13;
+	background-color:#293D40;&#13;
+  	padding:25px 0px;&#13;
+    color:white;&#13;
+  width:100%;&#13;
+}&#13;
+&#13;
+.isc-footer a:hover{&#13;
+	color:white;&#13;
+    cursor:pointer;&#13;
+}&#13;
+.isc-footer a:visited{&#13;
+	color:white;&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>cookieSettings</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>cookieSettings</name>
+        <option_schema/>
+        <public>true</public>
+        <roles>admin,security_dashboard_user</roles>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_header_footer</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-11-08 21:17:46</sys_created_on>
+        <sys_id>c3608ef81b454010764ddc6cdc4bcb50</sys_id>
+        <sys_mod_count>118</sys_mod_count>
+        <sys_name>cookieSettings</sys_name>
+        <sys_package display_value="demoApp" source="x_414129_demoapp">b51f82441b010010764ddc6cdc4bcba1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="demoApp">b51f82441b010010764ddc6cdc4bcba1</sys_scope>
+        <sys_update_name>sp_header_footer_c3608ef81b454010764ddc6cdc4bcb50</sys_update_name>
+        <sys_updated_by>subhan123</sys_updated_by>
+        <sys_updated_on>2019-12-03 15:23:02</sys_updated_on>
+        <template><![CDATA[<script>
+  var myCookie = (function() {
+  function getCookieVal(offset) {
+    var endstr = document.cookie.indexOf(";", offset);
+    if (endstr == -1) endstr = document.cookie.length;
+    return unescape(document.cookie.substring(offset, endstr));
+  }
+
+  function GetCookie(name) {
+    var arg = name + "=";
+    var alen = arg.length;
+    var clen = document.cookie.length;
+    var i = 0;
+
+    while (i < clen) {
+      var j = i + alen;
+      if (document.cookie.substring(i, j) == arg) return getCookieVal(j);
+      i = document.cookie.indexOf(" ", i) + 1;
+      if (i == 0) break;
+    }
+
+    return null;
+  }
+
+  function SetCookie(name, value) {
+    var argv = SetCookie.arguments;
+    var argc = SetCookie.arguments.length;
+    var expires = 2 < argc ? argv[2] : null;
+    var path = 3 < argc ? argv[3] : null;
+    var domain = 4 < argc ? argv[4] : null;
+    var secure = 5 < argc ? argv[5] : false;
+    document.cookie =
+      name +
+      "=" +
+      escape(value) +
+      (expires == null ? "" : "; expires=" + expires.toGMTString()) +
+      (path == null ? "" : "; path=" +  "http://127.0.0.1:5500") +
+      (domain == null ? "" : "; domain=" + domain) +
+      (secure == true ? "; secure" : "");
+  }
+  function DeleteCookie(name) {
+   document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+  }
+  return {
+    set: SetCookie,
+    get: GetCookie,
+    delete: DeleteCookie
+  };
+})();
+  
+    (function(window) {
+  $("#save-btn").on("click", function() {
+    var performance = $("#incPerformance")[0].checked ? "Yes" : "No";
+    var analytics = $("#incAnalytics")[0].checked ? "Yes" : "No";
+    var marketing = $("#incMarketing")[0].checked ? "Yes" : "No";
+    var essential = $("#incEssential")[0].checked ? "Yes" : "No";
+    var message =
+      "Performance cookies: " +
+      performance +
+      "\n" +
+      "Analytics cookies: " +
+      analytics +
+      "\n" +
+      "Marketing cookies: " +
+      marketing +
+      "\n" +
+      "Essential cookies: " +
+      essential;
+    alert(message);
+    
+    AddCookieValue("incPerformance", incPerformance);
+    AddCookieValue("incAnalytics", incAnalytics);
+    AddCookieValue("incMarketing", incMarketing);
+    AddCookieValue("incEssential", incEssential);
+  });
+  function AddCookieValue(name, value) {
+    if (value === "Yes") {
+      myCookie.set(name, value);
+    } else {
+      if (myCookie.get(name)) {
+        myCookie.delete(name);
+      }
+    }
+  }
+  function setCheckboxValue(name, value) {
+    var n = "#" + name;
+    if (value) {
+      $(n).prop("checked", true);
+    }
+  }
+  $(document).ready(function() {
+    setCheckboxValue("incPerformance", myCookie.get("incPerformance"));
+    setCheckboxValue("incAnalytics", myCookie.get("incAnalytics"));
+    setCheckboxValue("incMarketing", myCookie.get("incMarketing"));
+    setCheckboxValue("incEssential", myCookie.get("incEssential"));
+  });
+})();
+
+
+
+  
+</script>
+
+
+
+<script>
+  function cookieAPI() {
+		//var requestBody = "{\"analytics_cookies\":\"Yes\",\"essential_cookies\":\"Yes\",\"performance_cookies\":\"No\"}"; 
+        //{"essential_cookies":"Yes","analytics_cookies":"Yes","marketing_cookies":"Yes","performance_cookies":"Yes"}
+
+                    var incPerformance = $('#incPerformance')[0].checked ? 'Yes' : 'No';
+                    var incAnalytics = $('#incAnalytics')[0].checked ? 'Yes' : 'No';
+                    var incMarketing = $('#incMarketing')[0].checked ? 'Yes' : 'No';
+                    var incEssential = $('#incEssential')[0].checked ? 'Yes' : 'No';
+
+     
+                    var requestBody = "{\"analytics_cookies\":\"" + incAnalytics + "\",\"essential_cookies\":\"" + incEssential + "\", \"performance_cookies\":\"" + incPerformance + "\", \"marketing_cookies\":\"" + incMarketing + "\"}";
+                
+
+                    var client=new XMLHttpRequest();
+                    client.open("post","https://dev88535.service-now.com/api/now/table/x_414129_ccpa_ui_c_ccpa_cookie_opt_in");
+    
+                    client.setRequestHeader('Accept','application/json');
+                    client.setRequestHeader('Content-Type','application/json');
+    
+                    //Eg. UserName="admin", Password="admin" for this code sample.
+                    client.setRequestHeader('Authorization', 'Basic '+btoa('admin'+':'+'Sejal@1323'));
+    
+                    client.onreadystatechange = function() { 
+                        if(this.readyState == this.DONE) {
+                               // document.getElementById("response").innerHTML=this.status + this.response; 
+                                var res = this.response;
+                                parseData = JSON.parse(res);
+                                alert("You have successfully created a record with this number:" + parseData.result.number); 
+                        }
+                    }; 
+                    client.send(requestBody);
+
+    }
+$('#closeModal').on('click', function(e) {
+ document.getElementById('id01').style.display='none'
+window.top.postMessage('dec', '*')
+});
+  
+  
+  
+ // #####################################
+  
+  
+  
+</script>
+
+
+<!-- <div class="container-fluid isc-footer" id="myPage">
+  <div class="row">
+    <div class="col-xs-6">
+      ${This website uses cookies to remember users and understand ways enhance their experience.  }
+    </div>
+       ${ <button type="button" class="btn btn-success">Accept </button> }
+   ${ <button type="button" id="mybtn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-left:20px;">
+  Privacy Policy Settings </button>}
+  </div>
+</div> -->
+
+${ <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document"> -->
+<div id="id01">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Privacy Preferences Settings</h3>
+      <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span> 
+        </button> -->
+      </div>
+      <div class="modal-body">
+       <div class="list-group">
+   <div class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+         <div class="form-check">
+            <input type="checkbox" id="incPerformance" value="">
+            <label class="form-check-label" for="exampleCheck1" style="padding-left: 10px; font-weight:700;">Performance Cookies</label>
+         </div>
+      </div>
+      <p class="mb-1" style="padding-left: 25px;">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+   </div>
+   <div class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+         <div class="form-check">
+            <input type="checkbox" id="incAnalytics">
+            <label class="form-check-label" for="exampleCheck2" style="padding-left: 10px; font-weight:700;">Analytics Cookies</label>
+         </div>
+      </div>
+      <p class="mb-1" style="padding-left: 25px;">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+   </div>
+   <div class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+         <div class="form-check">
+            <input type="checkbox" id="incMarketing">
+            <label class="form-check-label" for="exampleCheck3" style="padding-left: 10px; font-weight:700;">Marketing Cookies</label>
+         </div>
+      </div>
+      <p class="mb-1" style="padding-left: 25px;">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+   </div>
+   <div class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+         <div class="form-check">
+            <input type="checkbox" id="incEssential">
+            <label class="form-check-label" for="exampleCheck4" style="padding-left: 10px; font-weight:700;">Essential Cookies</label>
+         </div>
+      </div>
+      <p class="mb-1" style="padding-left: 25px;">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+   </div>
+</div>
+      </div>
+      <div class="modal-footer" id="id01" style="text-align:left !important;">
+         <button type="button" class="btn btn-primary" id="save-btn"  data-dismiss="modal" onclick="cookieAPI()">Save changes</button>
+        <button type="button" id="closeModal" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+</div>
+ <!-- </div>
+</div> -->}]]></template>
+    </sp_header_footer>
+</record_update>
